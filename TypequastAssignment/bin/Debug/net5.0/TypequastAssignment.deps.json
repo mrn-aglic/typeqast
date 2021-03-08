@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "TypequastAssignment/1.0.0": {
+        "dependencies": {
+          "ShoppingBasket": "1.0.0"
+        },
+        "runtime": {
+          "TypequastAssignment.dll": {}
+        }
+      },
+      "ShoppingBasket/1.0.0": {
+        "runtime": {
+          "ShoppingBasket.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TypequastAssignment/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ShoppingBasket/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

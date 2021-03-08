@@ -1,0 +1,12 @@
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/bin/Debug/net5.0/ShoppingBasket.deps.json
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/bin/Debug/net5.0/ShoppingBasket.dll
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/bin/Debug/net5.0/ref/ShoppingBasket.dll
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/bin/Debug/net5.0/ShoppingBasket.pdb
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.csprojAssemblyReference.cache
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.GeneratedMSBuildEditorConfig.editorconfig
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.AssemblyInfoInputs.cache
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.AssemblyInfo.cs
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.csproj.CoreCompileInputs.cache
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.dll
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ref/ShoppingBasket.dll
+/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/Debug/net5.0/ShoppingBasket.pdb

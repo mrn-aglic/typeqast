@@ -1,30 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {
-      "ShoppingBasket/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/ShoppingBasket.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ShoppingBasket.dll": {}
-        }
-      }
-    }
+    "net5.0": {}
   },
-  "libraries": {
-    "ShoppingBasket/1.0.0": {
-      "type": "project",
-      "path": "../ShoppingBasket/ShoppingBasket.csproj",
-      "msbuildProject": "../ShoppingBasket/ShoppingBasket.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": [
-      "ShoppingBasket >= 1.0.0"
-    ]
+    "net5.0": []
   },
   "packageFolders": {
     "/Users/marinagliccuvic/.nuget/packages/": {}
@@ -32,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/TypequastAssignment/TypequastAssignment.csproj",
-      "projectName": "TypequastAssignment",
-      "projectPath": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/TypequastAssignment/TypequastAssignment.csproj",
+      "projectUniqueName": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/ShoppingBasket.csproj",
+      "projectName": "ShoppingBasket",
+      "projectPath": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/ShoppingBasket.csproj",
       "packagesPath": "/Users/marinagliccuvic/.nuget/packages/",
-      "outputPath": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/TypequastAssignment/obj/",
+      "outputPath": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/marinagliccuvic/.nuget/NuGet/NuGet.Config"
@@ -50,11 +31,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/ShoppingBasket.csproj": {
-              "projectPath": "/Users/marinagliccuvic/RiderProjects/TypequastAssignment/ShoppingBasket/ShoppingBasket.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
