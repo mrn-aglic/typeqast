@@ -1,3 +1,5 @@
+using ShoppingBasket.Model;
+
 namespace ShoppingBasket
 {
     public class BasketItem
@@ -14,6 +16,11 @@ namespace ShoppingBasket
         public BasketItem AddQuantity(int num)
         {
             return new(Num + num, Product);
+        }
+
+        public BasketItem Copy(int newNum)
+        {
+            return new(newNum, Product);
         }
 
         public double GetPrice()

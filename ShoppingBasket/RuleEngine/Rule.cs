@@ -1,3 +1,5 @@
+using System;
+
 namespace ShoppingBasket.RuleEngine
 {
     public class Rule

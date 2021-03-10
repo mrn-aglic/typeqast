@@ -10,8 +10,6 @@ namespace ShoppingBasket.RuleEngine
             var left = Expression.Property(parameterExpression, r.MemberName);
             var tProp = typeof(T).GetProperty(r.MemberName)?.PropertyType;
             
-            Console.WriteLine(left.ToString());
-            
             ExpressionType expressionType;
 
             if (ExpressionType.TryParse(r.Method, out expressionType))

@@ -1,18 +1,37 @@
 using System.Collections.Generic;
-using ShoppingBasket.DbModel;
-using ShoppingBasket.RuleEngine;
+using System.Linq;
+using ShoppingBasket.Model;
+using DbRule = ShoppingBasket.DbModel.Rule;
 
 namespace ShoppingBasket.Repositories
 {
-    public class RuleRepository : IRuleRepository
+    public class RuleRepository
     {
-        public IEnumerable<RuleRecord> GetFromSource()
+        public ProductRepository ProductRepository { get; set; }
+
+        public RuleRepository(ProductRepository productRepository)
         {
-            return new List<RuleRecord>
-            {
-                new RuleRecord(0, "Num", "GreaterThanOrEqual", "2"),
-                new RuleRecord(1, "Num", "GreaterThan", "3")
-            };
+            ProductRepository = productRepository;
+        }
+
+        public IEnumerable<DbRule> Table = new List<DbRule>
+        {
+            new DbRule(0, 0, "Num", "GreaterThanOrEqual", "2"),
+            new DbRule(1, 1, "Num", "GreaterThanOrEqual", "4")
+        };
+
+        public IEnumerable<Rule> GetFromSource()
+        {
+            var products = ProductRepository.GetFromSource();
+            return Table.Select(r =>
+                new Rule
+                (
+                    r.Id,
+                    products.First(p => p.Id == r.SourceProductId),
+                    r.MemberName,
+                    r.Method,
+                    r.TargetValue
+                ));
         }
     }
 }

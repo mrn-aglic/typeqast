@@ -1,26 +1,40 @@
 using System.Collections.Generic;
-using ShoppingBasket.DbModel;
+using System.Linq;
+using ShoppingBasket.Model;
+using DbDiscount = ShoppingBasket.DbModel.Discount;
 
 namespace ShoppingBasket.Repositories
 {
-    public class DiscountRepository : IRuleRepository
+    public class DiscountRepository
     {
-        public IEnumerable<RuleRecord> GetFromSource()
+        public RuleRepository RuleRepository { get; set; }
+        public ProductRepository ProductRepository { get; set; }
+
+        public DiscountRepository(RuleRepository ruleRepository, ProductRepository productRepository)
         {
-            return new List<DiscountRule>
-            {
-                new DiscountRule(0, 2, "Price", "Multiply", "0.5"),
-                new DiscountRule(1, 1, "Price", "Multiply", "1")
-            };
+            RuleRepository = ruleRepository;
+            ProductRepository = productRepository;
         }
 
-        // public IEnumerable<Discount> GetFromSource2()
-        // {
-        //     return new List<Discount>
-        //     {
-        //         new Discount(0, 2, product => product.Price / 2),
-        //         new Discount(1, 1, product => product.Price / 4)
-        //     };
-        // }
+        public IEnumerable<DbDiscount> Table = new List<DbDiscount>
+        {
+            new DbDiscount(0, 0, 2, "Price", "Multiply", "0.5"),
+            new DbDiscount(1, 1, 1, "Price", "Multiply", "1")
+        };
+
+        public IEnumerable<Discount> GetFromSource()
+        {
+            var products = ProductRepository.GetFromSource();
+
+            var rules = RuleRepository.GetFromSource();
+            return Table.Select(d =>
+                new Model.Discount(
+                    rules.First(r => r.Id == d.RuleId),
+                    products.First(p => p.Id == d.TargetProductId),
+                    d.MemberName,
+                    d.Method,
+                    d.TargetValue
+                ));
+        }
     }
 }

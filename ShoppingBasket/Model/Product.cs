@@ -1,4 +1,4 @@
-namespace ShoppingBasket
+namespace ShoppingBasket.Model
 {
     public class Product
     {

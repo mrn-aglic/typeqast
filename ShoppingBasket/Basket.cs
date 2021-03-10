@@ -7,10 +7,12 @@ namespace ShoppingBasket
 {
     public class Basket
     {
+        private DiscountManager _discountManager;
         private readonly Dictionary<int, BasketItem> _accumulatedBasketItems;
 
         public Basket(DiscountManager discountManager)
         {
+            _discountManager = discountManager;
             _accumulatedBasketItems = new Dictionary<int, BasketItem>();
         }
 
@@ -21,7 +23,14 @@ namespace ShoppingBasket
             {
                 sum += basketItem.GetPrice();
             }
-            return sum;
+
+            foreach (var discountResult in _discountManager.GetDiscountResults(_accumulatedBasketItems))
+            {
+                Console.WriteLine(discountResult.GetDescription());
+                sum -= discountResult.Amount;
+            }
+
+            return Math.Round(sum, 3);
         }
 
         public void Add(BasketItem basketItem)
@@ -39,6 +48,16 @@ namespace ShoppingBasket
         public void AddProducts(IEnumerable<BasketItem> items)
         {
             items.ToList().ForEach(Add);
+        }
+
+        public void AddProducts(params BasketItem[] items)
+        {
+            AddProducts(items.ToList());
+        }
+
+        public void Clear()
+        {
+            _accumulatedBasketItems.Clear();
         }
     }
 }
