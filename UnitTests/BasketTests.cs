@@ -13,19 +13,15 @@ namespace UnitTests
     public class BasketTests
     {
         private Basket _shoppingBasket;
-        private Mock<ICompiler> _compilerMock;
         private DiscountManager _discountManager;
 
         [SetUp]
         public void SetUp()
         {
             var compilerDataExpected = new CompilerData().Pairs.Select(x => x.Second);
-            _compilerMock = new Mock<ICompiler>();
-            _compilerMock.Setup(c => c.Compile(It.IsAny<IEnumerable<Discount>>()))
-                .Returns(compilerDataExpected);
 
             _discountManager =
-                new DiscountManager(_compilerMock.Object, new Mock<IRepository<Discount>>().Object);
+                new DiscountManager(compilerDataExpected);
             _shoppingBasket = new Basket(_discountManager);
         }
 

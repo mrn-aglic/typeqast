@@ -17,7 +17,7 @@ namespace TypequastAssignment
             var compiler = new DiscountCompiler();
             var compiledDiscounts = compiler.Compile(discountRepository.GetFromSource());
             
-            var discountManager = new DiscountManager(new DiscountCompiler(), discountRepository);
+            var discountManager = new DiscountManager(compiledDiscounts);
 
             var basket = new Basket(discountManager);
 

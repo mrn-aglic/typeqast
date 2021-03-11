@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ShoppingBasket.Compiler;
@@ -10,10 +11,9 @@ namespace ShoppingBasket
     {
         private readonly IEnumerable<CompilerResult> _compilerResults;
 
-        public DiscountManager(ICompiler ruleCompiler, IRepository<Discount> discountRepository)
+        public DiscountManager(IEnumerable<CompilerResult> compilerResults)
         {
-            var discounts = discountRepository.GetFromSource();
-            _compilerResults = ruleCompiler.Compile(discounts);
+            _compilerResults = compilerResults;
         }
 
         public IEnumerable<DiscountResult> GetDiscountResults(Dictionary<int, BasketItem> basketItems)
