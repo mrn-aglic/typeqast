@@ -1,7 +1,7 @@
 using System;
 using ShoppingBasket.Model;
 
-namespace ShoppingBasket.RuleCompiler
+namespace ShoppingBasket.Compiler
 {
     public class CompilerResult
     {

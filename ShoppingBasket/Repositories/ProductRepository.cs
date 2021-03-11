@@ -5,7 +5,7 @@ using DbProduct = ShoppingBasket.DbModel.Product;
 
 namespace ShoppingBasket.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository : IRepository<Product>
     {
         public IEnumerable<DbProduct> Table = new List<DbProduct>
         {

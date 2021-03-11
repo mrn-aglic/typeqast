@@ -23,6 +23,11 @@ namespace ShoppingBasket
             return new(newNum, Product);
         }
 
+        public BasketItem Copy()
+        {
+            return Copy(Num);
+        }
+
         public double GetPrice()
         {
             return Num * Product.Price;

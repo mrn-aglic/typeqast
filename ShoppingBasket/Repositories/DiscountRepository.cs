@@ -5,10 +5,10 @@ using DbDiscount = ShoppingBasket.DbModel.Discount;
 
 namespace ShoppingBasket.Repositories
 {
-    public class DiscountRepository
+    public class DiscountRepository : IRepository<Discount>
     {
-        public RuleRepository RuleRepository { get; set; }
-        public ProductRepository ProductRepository { get; set; }
+        public RuleRepository RuleRepository { get; }
+        public ProductRepository ProductRepository { get; }
 
         public DiscountRepository(RuleRepository ruleRepository, ProductRepository productRepository)
         {

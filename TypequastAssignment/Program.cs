@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using ShoppingBasket;
 using ShoppingBasket.Compiler;
-using ShoppingBasket.Model;
 using ShoppingBasket.Repositories;
-using ShoppingBasket.RuleEngine;
-using Rule = ShoppingBasket.RuleEngine.Rule;
 
 namespace TypequastAssignment
 {
@@ -18,7 +14,10 @@ namespace TypequastAssignment
             var ruleRepository = new RuleRepository(productRepository);
             var discountRepository = new DiscountRepository(ruleRepository, productRepository);
 
-            var discountManager = new DiscountManager(new RuleCompiler(), discountRepository);
+            var compiler = new DiscountCompiler();
+            var compiledDiscounts = compiler.Compile(discountRepository.GetFromSource());
+            
+            var discountManager = new DiscountManager(new DiscountCompiler(), discountRepository);
 
             var basket = new Basket(discountManager);
 
@@ -48,6 +47,12 @@ namespace TypequastAssignment
             basket.AddProducts(new BasketItem(2, butter), new BasketItem(1, bread), new BasketItem(8, milk));
             
             Console.WriteLine("Total for case 4:");
+            Console.WriteLine(basket.CalculateSum());
+            
+            basket.Clear();
+            basket.AddProducts(new BasketItem(2, butter), new BasketItem(1, bread), new BasketItem(9, milk));
+            
+            Console.WriteLine("Total for case 5:");
             Console.WriteLine(basket.CalculateSum());
         }
     }

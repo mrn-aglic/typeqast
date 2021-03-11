@@ -5,9 +5,9 @@ using DbRule = ShoppingBasket.DbModel.Rule;
 
 namespace ShoppingBasket.Repositories
 {
-    public class RuleRepository
+    public class RuleRepository : IRepository<Rule>
     {
-        public ProductRepository ProductRepository { get; set; }
+        public ProductRepository ProductRepository { get; }
 
         public RuleRepository(ProductRepository productRepository)
         {

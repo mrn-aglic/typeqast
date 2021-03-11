@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ShoppingBasket.RuleEngine;
 
 namespace ShoppingBasket
 {
     public class Basket
     {
-        private DiscountManager _discountManager;
+        private readonly IDiscountManager _discountManager;
         private readonly Dictionary<int, BasketItem> _accumulatedBasketItems;
 
-        public Basket(DiscountManager discountManager)
+        public Basket(IDiscountManager discountManager)
         {
             _discountManager = discountManager;
             _accumulatedBasketItems = new Dictionary<int, BasketItem>();
+        }
+
+        public Dictionary<int, BasketItem> GetCollectionCopy()
+        {
+            var dict = new Dictionary<int, BasketItem>();
+
+            foreach (var (key, item) in _accumulatedBasketItems)
+            {
+                dict.Add(key, item.Copy());
+            }
+            
+            return dict;
         }
 
         public double CalculateSum()
