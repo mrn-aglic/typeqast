@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>TypequastAssignment</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ShoppingBasket\ShoppingBasket.csproj" />
+    </ItemGroup>
+
+</Project>

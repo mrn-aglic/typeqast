@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeqastAssignment", "TypeqastAssignment\TypeqastAssignment.csproj", "{BFEB97C3-381C-49BD-BFDD-73AE2D4AB6B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingBasket", "ShoppingBasket\ShoppingBasket.csproj", "{D757DB31-A632-4250-A5CD-4B9301A5F2F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{623646D8-2BC4-4FEF-8DD9-CD5294D76B72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFEB97C3-381C-49BD-BFDD-73AE2D4AB6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEB97C3-381C-49BD-BFDD-73AE2D4AB6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEB97C3-381C-49BD-BFDD-73AE2D4AB6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEB97C3-381C-49BD-BFDD-73AE2D4AB6B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D757DB31-A632-4250-A5CD-4B9301A5F2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D757DB31-A632-4250-A5CD-4B9301A5F2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D757DB31-A632-4250-A5CD-4B9301A5F2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D757DB31-A632-4250-A5CD-4B9301A5F2F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{623646D8-2BC4-4FEF-8DD9-CD5294D76B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{623646D8-2BC4-4FEF-8DD9-CD5294D76B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{623646D8-2BC4-4FEF-8DD9-CD5294D76B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{623646D8-2BC4-4FEF-8DD9-CD5294D76B72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
