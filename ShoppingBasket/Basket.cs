@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,11 +24,11 @@ namespace ShoppingBasket
             {
                 dict.Add(key, item.Copy());
             }
-            
+
             return dict;
         }
 
-        public double CalculateSum()
+        public Summary CalculateSum()
         {
             var sum = 0.0;
             foreach (var (productId, basketItem) in _accumulatedBasketItems)
@@ -35,13 +36,14 @@ namespace ShoppingBasket
                 sum += basketItem.GetPrice();
             }
 
-            foreach (var discountResult in _discountManager.GetDiscountResults(_accumulatedBasketItems))
+            var discountResults = _discountManager.GetDiscountResults(_accumulatedBasketItems).ToArray();
+            foreach (var discountResult in discountResults)
             {
-                Console.WriteLine(discountResult.GetDescription());
+                // Console.WriteLine(discountResult.GetDescription());
                 sum -= discountResult.Amount;
             }
 
-            return Math.Round(sum, 3);
+            return new Summary(Math.Round(sum, 3), discountResults);
         }
 
         public void Add(BasketItem basketItem)

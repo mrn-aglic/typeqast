@@ -1,7 +1,9 @@
+using ShoppingBasket.Compiler;
+
 namespace ShoppingBasket
 {
-    public interface ILogger
+    public interface ILogger<T>
     {
-        public void Log<T>(T details);
+        public void Log(T details);
     }
 }

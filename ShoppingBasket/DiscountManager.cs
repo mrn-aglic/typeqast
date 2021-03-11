@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using ShoppingBasket.Compiler;
-using ShoppingBasket.Model;
-using ShoppingBasket.Repositories;
 
 namespace ShoppingBasket
 {

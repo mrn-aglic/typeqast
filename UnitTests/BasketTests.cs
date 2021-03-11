@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using ShoppingBasket;
-using Moq;
-using ShoppingBasket.Compiler;
 using ShoppingBasket.Model;
-using ShoppingBasket.Repositories;
 
 namespace UnitTests
 {
@@ -59,7 +56,7 @@ namespace UnitTests
             _shoppingBasket.Clear();
             _shoppingBasket.AddProducts(items);
 
-            Assert.AreEqual(Math.Round(price, 3), _shoppingBasket.CalculateSum());
+            Assert.AreEqual(Math.Round(price, 3), _shoppingBasket.CalculateSum().Total);
         }
     }
 }
