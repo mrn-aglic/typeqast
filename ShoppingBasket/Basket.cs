@@ -42,7 +42,7 @@ namespace ShoppingBasket
                 sum -= discountResult.Amount;
             }
 
-            return new Summary(Math.Round(sum, 3), discountResults);
+            return new Summary(Math.Round(sum, 3), discountResults, _accumulatedBasketItems.Select(acc => acc.Value));
         }
 
         public void Add(BasketItem basketItem)
