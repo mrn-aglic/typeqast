@@ -31,7 +31,7 @@ namespace ShoppingBasket
         public Summary CalculateSum()
         {
             var sum = 0.0;
-            foreach (var (productId, basketItem) in _accumulatedBasketItems)
+            foreach (var (_, basketItem) in _accumulatedBasketItems)
             {
                 sum += basketItem.GetPrice();
             }
@@ -39,7 +39,6 @@ namespace ShoppingBasket
             var discountResults = _discountManager.GetDiscountResults(_accumulatedBasketItems).ToArray();
             foreach (var discountResult in discountResults)
             {
-                // Console.WriteLine(discountResult.GetDescription());
                 sum -= discountResult.Amount;
             }
 
